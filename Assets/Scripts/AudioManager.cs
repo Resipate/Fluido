@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField]
     private AudioSource aS;
     public AudioClip[] musicClips;
     private bool introMusicPlaying;
@@ -14,6 +13,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        panicMusic = false;
         aS = this.GetComponent<AudioSource>();
         aS.clip = musicClips[1];
         aS.volume = 0;
@@ -30,22 +30,35 @@ public class AudioManager : MonoBehaviour
         introDecay = introDecayConst;
     }
 
+    public bool temp;
     void Update()
     {
+        aS.enabled = true;
+        if (panicMusic && aS.clip == musicClips[1]) { aS.clip = musicClips[2]; aS.enabled = false; }
+        else if(!panicMusic && aS.clip == musicClips[2]) { aS.clip = musicClips[1]; aS.enabled = false; }
+        temp = aS.isPlaying;
+        /*
+         * Initial Music Fade (Only played for first "introDecayConst" seconds)
+         * Start() generates a new object housing intro music
+         * each Update(), volumes gradually balance out to flood the intro music with current state music
+         */
         if (introMusicPlaying)
         {
             introDecay -= Time.deltaTime;
             if(introDecay <= 0)
             {
+                //After decay is complete, subset object is destroyed && volume is finalised
                 Destroy(this.transform.Find("introMusicSource").gameObject);
                 this.GetComponent<AudioSource>().volume = 0.05f;
                 introMusicPlaying = false;
             }
             else
             {
+                //Volume siphoning
                 transform.Find("introMusicSource").GetComponentInChildren<AudioSource>().volume = 0.3f * (introDecay / introDecayConst);
                 this.GetComponent<AudioSource>().volume = 0.05f * ((introDecayConst - introDecay) / introDecayConst);
             }
         }
+
     }
 }

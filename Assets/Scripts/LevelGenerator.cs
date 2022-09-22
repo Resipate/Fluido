@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] tileElements;
+    public GameObject[] tileElements;
     private int horizontal, vertical;
     int[,] levelMap =
     { //horizontal = 0-13   vertical = 0-14

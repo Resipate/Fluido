@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tween : MonoBehaviour
+public class Tween
 {
     public Transform Target { get; private set; }
     public Vector3 StartPos { get; private set; }

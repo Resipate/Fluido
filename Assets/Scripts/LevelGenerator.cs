@@ -7,7 +7,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject[] tileElements;
     private int horizontal, vertical;
     int[,] levelMap =
-    { //horizontal = 0-13   vertical = 0-14
+    {
         {1,2,2,2,2,2,2,2,2,2,2,2,2,7},
         {2,5,5,5,5,5,5,5,5,5,5,5,5,4},
         {2,5,3,4,4,3,5,3,4,4,4,3,5,4},
@@ -36,9 +36,11 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
+        //Finding bounds of array for any given map
         vertical = levelMap.GetLength(0) - 1;
         horizontal = levelMap.GetLength(1) - 1;
 
+        //Generating top left quarter of map as initial tiles
         GameObject Quad1 = new GameObject();
         Quad1.transform.parent = this.transform;
         Quad1.name = "Quadrant  1";
@@ -50,6 +52,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
+        //Generating top right quarter of map by manipulating a copy of first
         GameObject Quad2 = new GameObject();
         Quad2.transform.parent = this.transform;
         Quad2.name = "Quadrant  2";
@@ -66,6 +69,7 @@ public class LevelGenerator : MonoBehaviour
             newChild.transform.eulerAngles = new Vector3(iChild.transform.eulerAngles.x+180, iChild.transform.eulerAngles.y, iChild.transform.eulerAngles.z);
         }
 
+        //Generating bottom left quarter of map by manipulating a copy of first
         GameObject Quad3 = new GameObject();
         Quad3.transform.parent = this.transform;
         Quad3.name = "Quadrant  3";
@@ -84,6 +88,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
+        //Combining manipulations from Q2 & Q3 to produce the manipulations for Q4 in bottom right
         GameObject Quad4 = new GameObject();
         Quad4.transform.parent = this.transform;
         Quad4.name = "Quadrant  4";
@@ -103,6 +108,12 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
+    /*
+     * SetTile is just a simple switch statement to draw out the value and assign it to the correct piece
+     *      - int y is vertical coordinate
+     *      - int x is horizontal coordinate
+     *      - Transform parent is the parent object/folder for the sprite to be housed in (useful for grouping)
+     */
     private void SetTile(int y, int x, Transform parent)
     {
         switch (levelMap[y, x])
@@ -133,6 +144,20 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
+    /*
+     * A truely mind-bending experience
+     * below are 7 sets of rules for each tile to determine the correct rotation and to instantiate them correctly
+     *      - Generates tile first in correct position but no rotation
+     *      - TileSegment tS is a small object that holds adjacent tile information  in a cross formation
+     *                             top
+     *                   left     value    right
+     *                            bottom
+     *      - Each set has several if statements for each of the allowed connecting sprites in order to determine if their
+     *        rotated in such a way that the new piece can seemlessly connect
+     *      - Because the map is being generated in the order of top -> bottom then left -> right, I could not access the rotations
+     *        of the bottom piece and the right piece, so I had the rules solely depend on the top and left pieces to construct a
+     *        reasonable map
+     */
     private void Set1(int y, int x, Transform parent)
     {
         GameObject newTile = Instantiate(tileElements[0], new Vector3(x, vertical - y, 0), new Quaternion(0, 0, 0, 0), parent);

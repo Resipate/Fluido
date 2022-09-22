@@ -158,9 +158,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -169,9 +172,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -192,10 +195,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1200,9 +1207,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TotalEnemySprites_27: 767509387562859254
+      TotalEnemySprites_29: -7018362572909382355
+      TotalEnemySprites_3: -573663741404157757
+      TotalEnemySprites_16: -7026182189029329375
+      TotalEnemySprites_39: -5064440471578092110
+      TotalEnemySprites_1: -8322352015673138062
+      TotalEnemySprites_13: -38462392213700137
+      TotalEnemySprites_7: -336051049952046561
+      TotalEnemySprites_25: -4256659832467465971
+      TotalEnemySprites_42: 7323891357585078459
+      TotalEnemySprites_35: 1031185143632959709
+      TotalEnemySprites_14: 6571320820395383629
+      TotalEnemySprites_10: 4757662142816843624
+      TotalEnemySprites_32: 2876580054520334517
+      TotalEnemySprites_40: -6024393974224419218
+      TotalEnemySprites_34: 2197147959413048354
+      TotalEnemySprites_2: 428152164896162484
+      TotalEnemySprites_15: 2575811276372504752
+      TotalEnemySprites_26: -1864361106720473251
+      TotalEnemySprites_5: 6616581448623965428
+      TotalEnemySprites_28: -2450222828981946751
+      TotalEnemySprites_45: -10235625368485800
+      TotalEnemySprites_18: 9217832971040424597
+      TotalEnemySprites_9: -3020994120828382422
+      TotalEnemySprites_37: 1360917712447911175
+      TotalEnemySprites_41: 6371916336406961217
+      TotalEnemySprites_4: 2808229359667070165
+      TotalEnemySprites_44: 8754179497758605389
+      TotalEnemySprites_21: 1271989748757588838
+      TotalEnemySprites_38: -6057286231737530316
+      TotalEnemySprites_17: -3207775975178658497
+      TotalEnemySprites_8: 3569673043684277869
+      TotalEnemySprites_33: -683427613396658215
+      TotalEnemySprites_20: 4283157257558671371
+      TotalEnemySprites_24: 8879986330234120646
+      TotalEnemySprites_19: -6051142709277262206
+      TotalEnemySprites_43: -7038722522643851564
+      TotalEnemySprites_31: -2083177161651294938
+      TotalEnemySprites_36: 6464721074141642595
+      TotalEnemySprites_0: 2657201119638643373
+      TotalEnemySprites_22: -7394854970883013883
+      TotalEnemySprites_23: 5948902131855815502
+      TotalEnemySprites_6: -4514285931203138042
+      TotalEnemySprites_30: -6121815720456557365
+      TotalEnemySprites_11: -5956205953413794704
+      TotalEnemySprites_12: -5019873345716515584
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

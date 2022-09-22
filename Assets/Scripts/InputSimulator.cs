@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputSimulator : MonoBehaviour
 {
-    public Tweener tweener;
+    private Tweener tweener;
     private int pathingTracker;
     private int[,] playerPathing =
     {
@@ -22,13 +22,16 @@ public class InputSimulator : MonoBehaviour
         {1 ,13},
     };
 
-    public Animator anim;
+    private Animator anim;
+    private PlayerAudio audio;
 
     void Start()
     {
         tweener = GetComponent<Tweener>();
         pathingTracker = 0;
         anim = GetComponent<Animator>();
+        audio = GetComponent<PlayerAudio>();
+        audio.walking = 1;
     }
 
     // Update is called once per frame
@@ -40,7 +43,6 @@ public class InputSimulator : MonoBehaviour
             pathingTracker += 1;
             if (pathingTracker >= playerPathing.GetLength(0))
             {
-                Debug.Log("done");
                 pathingTracker = 0;
             }
         }

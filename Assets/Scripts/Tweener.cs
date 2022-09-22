@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tweener : MonoBehaviour
 {
     private Tween currentTween;
-    public bool tweenExists;
+    public bool tweenExists { get; private set; }
 
     private void Start()
     {

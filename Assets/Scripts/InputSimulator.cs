@@ -8,17 +8,9 @@ public class InputSimulator : MonoBehaviour
     private int pathingTracker;
     private int[,] playerPathing =
     {
-        {12,13},
-        {12,9 },
-        {9 ,9 },
-        {9 ,6 },
-        {12,6 },
-        {12,3 },
-        {9 ,3 },
-        {9 ,0 },
-        {6 ,0 },
-        {6 ,6 },
-        {1 ,6 },
+        {6,13},
+        {6,9 },
+        {1 ,9 },
         {1 ,13},
     };
 

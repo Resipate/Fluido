@@ -30,13 +30,12 @@ public class AudioManager : MonoBehaviour
         introDecay = introDecayConst;
     }
 
-    public bool temp;
     void Update()
     {
         aS.enabled = true;
         if (panicMusic && aS.clip == musicClips[1]) { aS.clip = musicClips[2]; aS.enabled = false; }
         else if(!panicMusic && aS.clip == musicClips[2]) { aS.clip = musicClips[1]; aS.enabled = false; }
-        temp = aS.isPlaying;
+
         /*
          * Initial Music Fade (Only played for first "introDecayConst" seconds)
          * Start() generates a new object housing intro music
@@ -55,7 +54,7 @@ public class AudioManager : MonoBehaviour
             else
             {
                 //Volume siphoning
-                transform.Find("introMusicSource").GetComponentInChildren<AudioSource>().volume = 0.3f * (introDecay / introDecayConst);
+                transform.Find("introMusicSource").GetComponentInChildren<AudioSource>().volume = 0.1f * (introDecay / introDecayConst);
                 this.GetComponent<AudioSource>().volume = 0.05f * ((introDecayConst - introDecay) / introDecayConst);
             }
         }

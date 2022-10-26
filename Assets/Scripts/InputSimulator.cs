@@ -8,22 +8,19 @@ public class InputSimulator : MonoBehaviour
     private int pathingTracker;
     private int[,] playerPathing =
     {
-        {6,13},
-        {6,9 },
-        {1 ,9 },
-        {1 ,13},
+        {10, 4},
+        {10, -4},
+        {-10, -4},
+        {-10, 4},
     };
 
     private Animator anim;
-    private PlayerAudio audio;
 
     void Start()
     {
         tweener = GetComponent<Tweener>();
         pathingTracker = 0;
         anim = GetComponent<Animator>();
-        audio = GetComponent<PlayerAudio>();
-        audio.walking = 1;
     }
 
     // Update is called once per frame

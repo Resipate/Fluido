@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TileSegment
 {
-    public int tile;
-    public int top;
-    public int bottom;
-    public int left;
-    public int right;
+    private int tile;
+    private int top;
+    private int bottom;
+    private int left;
+    private int right;
     public TileSegment(int tile, int top, int bottom, int left, int right)
     {
         this.tile = tile;
@@ -16,5 +16,17 @@ public class TileSegment
         this.bottom = bottom;
         this.left = left;
         this.right = right;
+    }
+
+    public int GetTile(string direction)
+    {
+        switch (direction)
+        {
+            case "top": return top;
+            case "bottom": return bottom;
+            case "left": return left;
+            case "right": return right;
+            default: return tile;
+        }
     }
 }

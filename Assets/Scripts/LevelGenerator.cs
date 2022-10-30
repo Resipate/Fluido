@@ -165,7 +165,7 @@ public class LevelGenerator : MonoBehaviour
         TileSegment tS = GetTileSegment(x, y);
         bool top = false;
         bool left = false;
-        if(tS.top == 1)
+        if(tS.GetTile("top") == 1)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if(topObj.transform.eulerAngles.z == 0 || topObj.transform.eulerAngles.z == 270)
@@ -173,7 +173,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if(tS.top == 2)
+        else if(tS.GetTile("top") == 2)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -181,7 +181,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if (tS.top == 7)
+        else if (tS.GetTile("top") == 7)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -190,7 +190,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        if (tS.left == 1)
+        if (tS.GetTile("left") == 1)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 0 || leftObj.transform.eulerAngles.z == 90)
@@ -198,7 +198,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        else if(tS.left == 2)
+        else if(tS.GetTile("left") == 2)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 90)
@@ -206,7 +206,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        if (tS.left == 7)
+        if (tS.GetTile("left") == 7)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 270)
@@ -227,7 +227,7 @@ public class LevelGenerator : MonoBehaviour
         TileSegment tS = GetTileSegment(x, y);
         bool top = false;
         bool left = false;
-        if (tS.top == 1)
+        if (tS.GetTile("top") == 1)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0 || topObj.transform.eulerAngles.z == 270)
@@ -235,7 +235,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if(tS.top == 2)
+        else if(tS.GetTile("top") == 2)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -243,7 +243,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if (tS.top == 7)
+        else if (tS.GetTile("top") == 7)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -252,7 +252,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        if (tS.left == 1)
+        if (tS.GetTile("left") == 1)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if(leftObj.transform.eulerAngles.z == 0 || leftObj.transform.eulerAngles.z == 90)
@@ -260,7 +260,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        if(tS.left == 2)
+        if(tS.GetTile("left") == 2)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 90)
@@ -268,7 +268,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        if (tS.left == 7)
+        if (tS.GetTile("left") == 7)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 270)
@@ -287,7 +287,7 @@ public class LevelGenerator : MonoBehaviour
         TileSegment tS = GetTileSegment(x, y);
         bool top = false;
         bool left = false;
-        if (tS.top == 3)
+        if (tS.GetTile("top") == 3)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0 || topObj.transform.eulerAngles.z == 270)
@@ -295,7 +295,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if (tS.top == 4)
+        else if (tS.GetTile("top") == 4)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -303,7 +303,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if (tS.top == 7)
+        else if (tS.GetTile("top") == 7)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 270)
@@ -312,7 +312,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        if (tS.left == 3)
+        if (tS.GetTile("left") == 3)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 0 || leftObj.transform.eulerAngles.z == 90)
@@ -320,7 +320,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        else if (tS.left == 4)
+        else if (tS.GetTile("left") == 4)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 90)
@@ -328,7 +328,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        else if (tS.left == 7)
+        else if (tS.GetTile("left") == 7)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 180)
@@ -349,7 +349,7 @@ public class LevelGenerator : MonoBehaviour
         TileSegment tS = GetTileSegment(x, y);
         bool top = false;
         bool left = false;
-        if (tS.top == 3)
+        if (tS.GetTile("top") == 3)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0 || topObj.transform.eulerAngles.z == 270)
@@ -357,7 +357,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if (tS.top == 4)
+        else if (tS.GetTile("top") == 4)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -365,7 +365,7 @@ public class LevelGenerator : MonoBehaviour
                 top = true;
             }
         }
-        else if(tS.top == 7)
+        else if(tS.GetTile("top") == 7)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 270)
@@ -374,7 +374,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        if (tS.left == 3)
+        if (tS.GetTile("left") == 3)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 0 || leftObj.transform.eulerAngles.z == 90)
@@ -382,7 +382,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        if (tS.left == 4)
+        if (tS.GetTile("left") == 4)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 90)
@@ -390,7 +390,7 @@ public class LevelGenerator : MonoBehaviour
                 left = true;
             }
         }
-        if (tS.left == 7)
+        if (tS.GetTile("left") == 7)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 180)
@@ -423,7 +423,7 @@ public class LevelGenerator : MonoBehaviour
         bool oTop = false;
         bool iLeft = false;
         bool oLeft = false;
-        if(tS.top == 1)
+        if(tS.GetTile("top") == 1)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if(topObj.transform.eulerAngles.z == 0 || topObj.transform.eulerAngles.z == 270)
@@ -431,7 +431,7 @@ public class LevelGenerator : MonoBehaviour
                 oTop = true;
             }
         }
-        else if(tS.top == 2)
+        else if(tS.GetTile("top") == 2)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -439,7 +439,7 @@ public class LevelGenerator : MonoBehaviour
                 oTop = true;
             }
         }
-        else if(tS.top == 3)
+        else if(tS.GetTile("top") == 3)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0 || topObj.transform.eulerAngles.z == 270)
@@ -447,7 +447,7 @@ public class LevelGenerator : MonoBehaviour
                 iTop = true;
             }
         }
-        else if (tS.top == 4)
+        else if (tS.GetTile("top") == 4)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if (topObj.transform.eulerAngles.z == 0)
@@ -455,7 +455,7 @@ public class LevelGenerator : MonoBehaviour
                 iTop = true;
             }
         }
-        else if(tS.top == 7)
+        else if(tS.GetTile("top") == 7)
         {
             GameObject topObj = GameObject.Find(x + ":" + (y - 1));
             if(topObj.transform.eulerAngles.z == 0)
@@ -468,7 +468,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        if (tS.left == 1)
+        if (tS.GetTile("left") == 1)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 180 || leftObj.transform.eulerAngles.z == 270)
@@ -476,7 +476,7 @@ public class LevelGenerator : MonoBehaviour
                 oLeft = true;
             }
         }
-        else if (tS.left == 2)
+        else if (tS.GetTile("left") == 2)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 90)
@@ -484,7 +484,7 @@ public class LevelGenerator : MonoBehaviour
                 oLeft = true;
             }
         }
-        else if (tS.left == 3)
+        else if (tS.GetTile("left") == 3)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 180 || leftObj.transform.eulerAngles.z == 270)
@@ -492,7 +492,7 @@ public class LevelGenerator : MonoBehaviour
                 iLeft = true;
             }
         }
-        else if (tS.left == 4)
+        else if (tS.GetTile("left") == 4)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 90)
@@ -500,7 +500,7 @@ public class LevelGenerator : MonoBehaviour
                 iLeft = true;
             }
         }
-        else if (tS.left == 7)
+        else if (tS.GetTile("left") == 7)
         {
             GameObject leftObj = GameObject.Find((x - 1) + ":" + y);
             if (leftObj.transform.eulerAngles.z == 270)

@@ -40,6 +40,7 @@ public class LevelGenerator : MonoBehaviour
         vertical = levelMap.GetLength(0) - 1;
         horizontal = levelMap.GetLength(1) - 1;
 
+
         //Generating top left quarter of map as initial tiles
         GameObject Quad1 = new GameObject();
         Quad1.transform.parent = this.transform;
@@ -51,7 +52,7 @@ public class LevelGenerator : MonoBehaviour
                 SetTile(y, x, Quad1.transform);
             }
         }
-
+        
         //Generating top right quarter of map by manipulating a copy of first
         GameObject Quad2 = new GameObject();
         Quad2.transform.parent = this.transform;
@@ -557,6 +558,26 @@ public class LevelGenerator : MonoBehaviour
             bottom = -1;
         }
         TileSegment tS = new TileSegment(levelMap[y, x], top, bottom, left, right);
+        return tS;
+    }
+
+    public TileSegment GetSurroundingTiles(int x, int y)
+    {
+        bool xFlip = false;
+        if(x > horizontal)
+        {
+            xFlip = true;
+            x = -x + horizontal*2;
+        }
+        bool yFlip = false;
+        if (y < 0)
+        {
+            yFlip = true;
+            y = -y;
+        }
+        TileSegment tS = GetTileSegment(x, y);
+        if (xFlip) { int temp = tS.GetTile("left"); tS.SetTile("left", tS.GetTile("right")); tS.SetTile("right", temp); }
+        if (yFlip) { int temp = tS.GetTile("up"); tS.SetTile("up", tS.GetTile("down")); tS.SetTile("down", temp); }
         return tS;
     }
 }

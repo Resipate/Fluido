@@ -29,4 +29,16 @@ public class TileSegment
             default: return tile;
         }
     }
+
+    public void SetTile(string direction, int value)
+    {
+        switch (direction)
+        {
+            case "top": top = value; break;
+            case "bottom": bottom = value; break;
+            case "left": left = value; break;
+            case "right": right = value; break;
+            default: tile = value; break;
+        }
+    }
 }
